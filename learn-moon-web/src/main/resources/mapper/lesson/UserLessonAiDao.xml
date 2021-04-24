@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ning.learn.moon.lesson.dao.UserLessonAiDao">
+  <resultMap id="BaseResultMap" type="com.ning.learn.moon.lesson.model.UserLessonAi">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="t_no" jdbcType="VARCHAR" property="tNo" />
+    <result column="g_no" jdbcType="VARCHAR" property="gNo" />
+    <result column="u_no" jdbcType="VARCHAR" property="uNo" />
+    <result column="course_id" jdbcType="BIGINT" property="courseId" />
+    <result column="course_no" jdbcType="VARCHAR" property="courseNo" />
+    <result column="deduct_hours" jdbcType="FLOAT" property="deductHours" />
+    <result column="course_type" jdbcType="INTEGER" property="courseType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="redeem_time" jdbcType="INTEGER" property="redeemTime" />
+    <result column="attend_time" jdbcType="INTEGER" property="attendTime" />
+    <result column="ctime" jdbcType="INTEGER" property="ctime" />
+    <result column="utime" jdbcType="INTEGER" property="utime" />
+    <result column="attend_duration" jdbcType="INTEGER" property="attendDuration" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="mid" jdbcType="INTEGER" property="mid" />
+    <result column="del" jdbcType="INTEGER" property="del" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="subject_id" jdbcType="BIGINT" property="subjectId" />
+    <result column="complete_time" jdbcType="INTEGER" property="completeTime" />
+    <result column="buy_id" jdbcType="INTEGER" property="buyId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `uid`, t_no, g_no, u_no, course_id, course_no, deduct_hours, course_type, `status`, 
+    redeem_time, attend_time, ctime, utime, attend_duration, `comment`, cid, mid, del, 
+    note, subject_id, complete_time, buy_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_lesson_ai
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_lesson_ai
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ning.learn.moon.lesson.model.UserLessonAi" useGeneratedKeys="true">
+    insert into user_lesson_ai (`uid`, t_no, g_no, 
+      u_no, course_id, course_no, 
+      deduct_hours, course_type, `status`, 
+      redeem_time, attend_time, ctime, 
+      utime, attend_duration, `comment`, 
+      cid, mid, del, note, 
+      subject_id, complete_time, buy_id
+      )
+    values (#{uid,jdbcType=BIGINT}, #{tNo,jdbcType=VARCHAR}, #{gNo,jdbcType=VARCHAR}, 
+      #{uNo,jdbcType=VARCHAR}, #{courseId,jdbcType=BIGINT}, #{courseNo,jdbcType=VARCHAR}, 
+      #{deductHours,jdbcType=FLOAT}, #{courseType,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, 
+      #{redeemTime,jdbcType=INTEGER}, #{attendTime,jdbcType=INTEGER}, #{ctime,jdbcType=INTEGER}, 
+      #{utime,jdbcType=INTEGER}, #{attendDuration,jdbcType=INTEGER}, #{comment,jdbcType=VARCHAR}, 
+      #{cid,jdbcType=INTEGER}, #{mid,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}, #{note,jdbcType=VARCHAR}, 
+      #{subjectId,jdbcType=BIGINT}, #{completeTime,jdbcType=INTEGER}, #{buyId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.ning.learn.moon.lesson.model.UserLessonAi" useGeneratedKeys="true">
+    insert into user_lesson_ai
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        `uid`,
+      </if>
+      <if test="tNo != null">
+        t_no,
+      </if>
+      <if test="gNo != null">
+        g_no,
+      </if>
+      <if test="uNo != null">
+        u_no,
+      </if>
+      <if test="courseId != null">
+        course_id,
+      </if>
+      <if test="courseNo != null">
+        course_no,
+      </if>
+      <if test="deductHours != null">
+        deduct_hours,
+      </if>
+      <if test="courseType != null">
+        course_type,
+      </if>
+      <if test="status != null">
+        `status`,
+      </if>
+      <if test="redeemTime != null">
+        redeem_time,
+      </if>
+      <if test="attendTime != null">
+        attend_time,
+      </if>
+      <if test="ctime != null">
+        ctime,
+      </if>
+      <if test="utime != null">
+        utime,
+      </if>
+      <if test="attendDuration != null">
+        attend_duration,
+      </if>
+      <if test="comment != null">
+        `comment`,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="mid != null">
+        mid,
+      </if>
+      <if test="del != null">
+        del,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="completeTime != null">
+        complete_time,
+      </if>
+      <if test="buyId != null">
+        buy_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="tNo != null">
+        #{tNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gNo != null">
+        #{gNo,jdbcType=VARCHAR},
+      </if>
+      <if test="uNo != null">
+        #{uNo,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        #{courseId,jdbcType=BIGINT},
+      </if>
+      <if test="courseNo != null">
+        #{courseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deductHours != null">
+        #{deductHours,jdbcType=FLOAT},
+      </if>
+      <if test="courseType != null">
+        #{courseType,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="redeemTime != null">
+        #{redeemTime,jdbcType=INTEGER},
+      </if>
+      <if test="attendTime != null">
+        #{attendTime,jdbcType=INTEGER},
+      </if>
+      <if test="ctime != null">
+        #{ctime,jdbcType=INTEGER},
+      </if>
+      <if test="utime != null">
+        #{utime,jdbcType=INTEGER},
+      </if>
+      <if test="attendDuration != null">
+        #{attendDuration,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null">
+        #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        #{del,jdbcType=INTEGER},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="completeTime != null">
+        #{completeTime,jdbcType=INTEGER},
+      </if>
+      <if test="buyId != null">
+        #{buyId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ning.learn.moon.lesson.model.UserLessonAi">
+    update user_lesson_ai
+    <set>
+      <if test="uid != null">
+        `uid` = #{uid,jdbcType=BIGINT},
+      </if>
+      <if test="tNo != null">
+        t_no = #{tNo,jdbcType=VARCHAR},
+      </if>
+      <if test="gNo != null">
+        g_no = #{gNo,jdbcType=VARCHAR},
+      </if>
+      <if test="uNo != null">
+        u_no = #{uNo,jdbcType=VARCHAR},
+      </if>
+      <if test="courseId != null">
+        course_id = #{courseId,jdbcType=BIGINT},
+      </if>
+      <if test="courseNo != null">
+        course_no = #{courseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="deductHours != null">
+        deduct_hours = #{deductHours,jdbcType=FLOAT},
+      </if>
+      <if test="courseType != null">
+        course_type = #{courseType,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        `status` = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="redeemTime != null">
+        redeem_time = #{redeemTime,jdbcType=INTEGER},
+      </if>
+      <if test="attendTime != null">
+        attend_time = #{attendTime,jdbcType=INTEGER},
+      </if>
+      <if test="ctime != null">
+        ctime = #{ctime,jdbcType=INTEGER},
+      </if>
+      <if test="utime != null">
+        utime = #{utime,jdbcType=INTEGER},
+      </if>
+      <if test="attendDuration != null">
+        attend_duration = #{attendDuration,jdbcType=INTEGER},
+      </if>
+      <if test="comment != null">
+        `comment` = #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="mid != null">
+        mid = #{mid,jdbcType=INTEGER},
+      </if>
+      <if test="del != null">
+        del = #{del,jdbcType=INTEGER},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        subject_id = #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="completeTime != null">
+        complete_time = #{completeTime,jdbcType=INTEGER},
+      </if>
+      <if test="buyId != null">
+        buy_id = #{buyId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ning.learn.moon.lesson.model.UserLessonAi">
+    update user_lesson_ai
+    set `uid` = #{uid,jdbcType=BIGINT},
+      t_no = #{tNo,jdbcType=VARCHAR},
+      g_no = #{gNo,jdbcType=VARCHAR},
+      u_no = #{uNo,jdbcType=VARCHAR},
+      course_id = #{courseId,jdbcType=BIGINT},
+      course_no = #{courseNo,jdbcType=VARCHAR},
+      deduct_hours = #{deductHours,jdbcType=FLOAT},
+      course_type = #{courseType,jdbcType=INTEGER},
+      `status` = #{status,jdbcType=INTEGER},
+      redeem_time = #{redeemTime,jdbcType=INTEGER},
+      attend_time = #{attendTime,jdbcType=INTEGER},
+      ctime = #{ctime,jdbcType=INTEGER},
+      utime = #{utime,jdbcType=INTEGER},
+      attend_duration = #{attendDuration,jdbcType=INTEGER},
+      `comment` = #{comment,jdbcType=VARCHAR},
+      cid = #{cid,jdbcType=INTEGER},
+      mid = #{mid,jdbcType=INTEGER},
+      del = #{del,jdbcType=INTEGER},
+      note = #{note,jdbcType=VARCHAR},
+      subject_id = #{subjectId,jdbcType=BIGINT},
+      complete_time = #{completeTime,jdbcType=INTEGER},
+      buy_id = #{buyId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="listLessonInfo" resultType="com.ning.learn.moon.lesson.po.LessonInfoPO">
+    SELECT id,uid AS studentId,course_id AS courseId,course_no as courseNo,status
+    FROM user_lesson_ai
+    WHERE `uid` = #{studentId,jdbcType=BIGINT} AND `status` = #{status,jdbcType=INTEGER}
+
+  </select>
+</mapper>

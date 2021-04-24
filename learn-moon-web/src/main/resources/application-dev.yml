@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/learn?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 12345678
+#公共配置与profiles选择无关
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    call-setters-on-nulls: true
