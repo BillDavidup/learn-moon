@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ning.learn.moon.userinfo.dao.UUserinfoDao">
+    <resultMap id="BaseResultMap" type="com.ning.learn.moon.userinfo.model.UUserinfo">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="smallname" jdbcType="VARCHAR" property="smallname"/>
+        <result column="head" jdbcType="VARCHAR" property="head"/>
+        <result column="pinyin" jdbcType="VARCHAR" property="pinyin"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="number" jdbcType="VARCHAR" property="number"/>
+        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+        <result column="mobile_local" jdbcType="VARCHAR" property="mobileLocal"/>
+        <result column="weixin" jdbcType="VARCHAR" property="weixin"/>
+        <result column="s0" jdbcType="INTEGER" property="s0"/>
+        <result column="s1" jdbcType="INTEGER" property="s1"/>
+        <result column="s2" jdbcType="INTEGER" property="s2"/>
+        <result column="s3" jdbcType="INTEGER" property="s3"/>
+        <result column="s4" jdbcType="INTEGER" property="s4"/>
+        <result column="s5" jdbcType="INTEGER" property="s5"/>
+        <result column="s6" jdbcType="INTEGER" property="s6"/>
+        <result column="type" jdbcType="INTEGER" property="type"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="substatus" jdbcType="INTEGER" property="substatus"/>
+        <result column="orther" jdbcType="VARCHAR" property="orther"/>
+        <result column="note" jdbcType="VARCHAR" property="note"/>
+        <result column="note_time" jdbcType="INTEGER" property="noteTime"/>
+        <result column="ctime" jdbcType="INTEGER" property="ctime"/>
+        <result column="utime" jdbcType="INTEGER" property="utime"/>
+        <result column="cid" jdbcType="BIGINT" property="cid"/>
+        <result column="mid" jdbcType="BIGINT" property="mid"/>
+        <result column="channel" jdbcType="VARCHAR" property="channel"/>
+        <result column="come" jdbcType="VARCHAR" property="come"/>
+        <result column="newsource" jdbcType="VARCHAR" property="newsource"/>
+        <result column="source" jdbcType="VARCHAR" property="source"/>
+        <result column="master" jdbcType="BIGINT" property="master"/>
+        <result column="teacher" jdbcType="BIGINT" property="teacher"/>
+        <result column="sales" jdbcType="BIGINT" property="sales"/>
+        <result column="province" jdbcType="VARCHAR" property="province"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="area" jdbcType="VARCHAR" property="area"/>
+        <result column="street" jdbcType="VARCHAR" property="street"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="created" jdbcType="INTEGER" property="created"/>
+        <result column="updated" jdbcType="INTEGER" property="updated"/>
+        <result column="bycreated" jdbcType="BIGINT" property="bycreated"/>
+        <result column="byupdated" jdbcType="BIGINT" property="byupdated"/>
+        <result column="payment" jdbcType="INTEGER" property="payment"/>
+        <result column="flowstatus" jdbcType="INTEGER" property="flowstatus"/>
+        <result column="exp_num" jdbcType="VARCHAR" property="expNum"/>
+        <result column="expstatus" jdbcType="INTEGER" property="expstatus"/>
+        <result column="del" jdbcType="INTEGER" property="del"/>
+        <result column="again_time" jdbcType="INTEGER" property="againTime"/>
+        <result column="status_tags" jdbcType="VARCHAR" property="statusTags"/>
+        <result column="lessonstatus" jdbcType="INTEGER" property="lessonstatus"/>
+        <result column="lessonexstatus" jdbcType="INTEGER" property="lessonexstatus"/>
+        <result column="exp_time" jdbcType="INTEGER" property="expTime"/>
+        <result column="f_lesson_time" jdbcType="INTEGER" property="fLessonTime"/>
+        <result column="f_buy_time" jdbcType="INTEGER" property="fBuyTime"/>
+        <result column="life" jdbcType="INTEGER" property="life"/>
+        <result column="apk" jdbcType="INTEGER" property="apk"/>
+        <result column="pc" jdbcType="INTEGER" property="pc"/>
+        <result column="fp_count" jdbcType="TINYINT" property="fpCount"/>
+        <result column="equ" jdbcType="VARCHAR" property="equ"/>
+        <result column="lessonequ" jdbcType="VARCHAR" property="lessonequ"/>
+        <result column="fp_time" jdbcType="INTEGER" property="fpTime"/>
+        <result column="fp_tags" jdbcType="VARCHAR" property="fpTags"/>
+        <result column="fp_auto" jdbcType="TINYINT" property="fpAuto"/>
+        <result column="fp_province" jdbcType="VARCHAR" property="fpProvince"/>
+        <result column="fp_city" jdbcType="VARCHAR" property="fpCity"/>
+        <result column="region" jdbcType="VARCHAR" property="region"/>
+        <result column="buyid" jdbcType="BIGINT" property="buyid"/>
+        <result column="buyregtype" jdbcType="INTEGER" property="buyregtype"/>
+        <result column="buystatus" jdbcType="INTEGER" property="buystatus"/>
+        <result column="point" jdbcType="TINYINT" property="point"/>
+        <result column="isactive" jdbcType="TINYINT" property="isactive"/>
+        <result column="havemind" jdbcType="TINYINT" property="havemind"/>
+        <result column="camera" jdbcType="VARCHAR" property="camera"/>
+        <result column="serverinfo" jdbcType="VARCHAR" property="serverinfo"/>
+        <result column="bosswarning" jdbcType="TINYINT" property="bosswarning"/>
+        <result column="bosstime" jdbcType="INTEGER" property="bosstime"/>
+        <result column="parent" jdbcType="BIGINT" property="parent"/>
+        <result column="pc_script" jdbcType="TINYINT" property="pcScript"/>
+        <result column="android_script" jdbcType="TINYINT" property="androidScript"/>
+        <result column="areacode" jdbcType="VARCHAR" property="areacode"/>
+        <result column="tmk" jdbcType="INTEGER" property="tmk"/>
+        <result column="tmkpool" jdbcType="INTEGER" property="tmkpool"/>
+        <result column="tmkstime" jdbcType="INTEGER" property="tmkstime"/>
+        <result column="tmkltime" jdbcType="INTEGER" property="tmkltime"/>
+        <result column="screenshot" jdbcType="BOOLEAN" property="screenshot"/>
+        <result column="fp_cc_org" jdbcType="BOOLEAN" property="fpCcOrg"/>
+        <result column="note_return_time" jdbcType="INTEGER" property="noteReturnTime"/>
+        <result column="act_status" jdbcType="INTEGER" property="actStatus"/>
+        <result column="act_type" jdbcType="INTEGER" property="actType"/>
+        <result column="act_pool" jdbcType="INTEGER" property="actPool"/>
+        <result column="edit_cc_time" jdbcType="INTEGER" property="editCcTime"/>
+        <result column="edit_tmk_time" jdbcType="INTEGER" property="editTmkTime"/>
+        <result column="is_new" jdbcType="BOOLEAN" property="isNew"/>
+        <result column="open_rec" jdbcType="INTEGER" property="openRec"/>
+        <result column="repool" jdbcType="BOOLEAN" property="repool"/>
+        <result column="referee" jdbcType="INTEGER" property="referee"/>
+        <result column="referee_master" jdbcType="INTEGER" property="refereeMaster"/>
+        <result column="flow_plan" jdbcType="TINYINT" property="flowPlan"/>
+        <result column="re_comm" jdbcType="BOOLEAN" property="reComm"/>
+        <result column="re_time" jdbcType="INTEGER" property="reTime"/>
+        <result column="callstatus" jdbcType="BOOLEAN" property="callstatus"/>
+        <result column="calltime" jdbcType="INTEGER" property="calltime"/>
+        <result column="lockoperator" jdbcType="INTEGER" property="lockoperator"/>
+        <result column="master_fptime" jdbcType="INTEGER" property="masterFptime"/>
+        <result column="channel_level" jdbcType="VARCHAR" property="channelLevel"/>
+        <result column="buylesstatus" jdbcType="BOOLEAN" property="buylesstatus"/>
+        <result column="groupqrcode" jdbcType="VARCHAR" property="groupqrcode"/>
+        <result column="flowtotal" jdbcType="INTEGER" property="flowtotal"/>
+        <result column="groupqrcode_uptime" jdbcType="INTEGER" property="groupqrcodeUptime"/>
+        <result column="groupqrcode_upuser" jdbcType="VARCHAR" property="groupqrcodeUpuser"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, username, smallname, head, pinyin, `password`, `number`, mobile, mobile_local,
+    weixin, s0, s1, s2, s3, s4, s5, s6, `type`, `status`, substatus, orther, note, note_time, 
+    ctime, utime, cid, mid, channel, come, newsource, `source`, master, teacher, sales, 
+    province, city, area, street, address, created, updated, bycreated, byupdated, payment, 
+    flowstatus, exp_num, expstatus, del, again_time, status_tags, lessonstatus, lessonexstatus, 
+    exp_time, f_lesson_time, f_buy_time, life, apk, pc, fp_count, equ, lessonequ, fp_time, 
+    fp_tags, fp_auto, fp_province, fp_city, region, buyid, buyregtype, buystatus, point, 
+    isactive, havemind, camera, serverinfo, bosswarning, bosstime, parent, pc_script, 
+    android_script, areacode, tmk, tmkpool, tmkstime, tmkltime, screenshot, fp_cc_org, 
+    note_return_time, act_status, act_type, act_pool, edit_cc_time, edit_tmk_time, is_new, 
+    open_rec, repool, referee, referee_master, flow_plan, re_comm, re_time, callstatus, 
+    calltime, lockoperator, master_fptime, channel_level, buylesstatus, groupqrcode, 
+    flowtotal, groupqrcode_uptime, groupqrcode_upuser
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from u_userinfo
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from u_userinfo
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.ning.learn.moon.userinfo.model.UUserinfo"
+            useGeneratedKeys="true">
+        insert into u_userinfo (username, smallname, head,
+                                pinyin, `password`, `number`,
+                                mobile, mobile_local, weixin,
+                                s0, s1, s2, s3,
+                                s4, s5, s6, `type`,
+                                `status`, substatus, orther,
+                                note, note_time, ctime,
+                                utime, cid, mid, channel,
+                                come, newsource, `source`,
+                                master, teacher, sales,
+                                province, city, area,
+                                street, address, created,
+                                updated, bycreated, byupdated,
+                                payment, flowstatus, exp_num,
+                                expstatus, del, again_time,
+                                status_tags, lessonstatus, lessonexstatus,
+                                exp_time, f_lesson_time, f_buy_time,
+                                life, apk, pc, fp_count,
+                                equ, lessonequ, fp_time,
+                                fp_tags, fp_auto, fp_province,
+                                fp_city, region, buyid,
+                                buyregtype, buystatus, point,
+                                isactive, havemind, camera,
+                                serverinfo, bosswarning, bosstime,
+                                parent, pc_script, android_script,
+                                areacode, tmk, tmkpool,
+                                tmkstime, tmkltime, screenshot,
+                                fp_cc_org, note_return_time, act_status,
+                                act_type, act_pool, edit_cc_time,
+                                edit_tmk_time, is_new, open_rec,
+                                repool, referee, referee_master,
+                                flow_plan, re_comm, re_time,
+                                callstatus, calltime, lockoperator,
+                                master_fptime, channel_level, buylesstatus,
+                                groupqrcode, flowtotal, groupqrcode_uptime,
+                                groupqrcode_upuser)
+        values (#{username,jdbcType=VARCHAR}, #{smallname,jdbcType=VARCHAR}, #{head,jdbcType=VARCHAR},
+                #{pinyin,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{number,jdbcType=VARCHAR},
+                #{mobile,jdbcType=VARCHAR}, #{mobileLocal,jdbcType=VARCHAR}, #{weixin,jdbcType=VARCHAR},
+                #{s0,jdbcType=INTEGER}, #{s1,jdbcType=INTEGER}, #{s2,jdbcType=INTEGER}, #{s3,jdbcType=INTEGER},
+                #{s4,jdbcType=INTEGER}, #{s5,jdbcType=INTEGER}, #{s6,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},
+                #{status,jdbcType=INTEGER}, #{substatus,jdbcType=INTEGER}, #{orther,jdbcType=VARCHAR},
+                #{note,jdbcType=VARCHAR}, #{noteTime,jdbcType=INTEGER}, #{ctime,jdbcType=INTEGER},
+                #{utime,jdbcType=INTEGER}, #{cid,jdbcType=BIGINT}, #{mid,jdbcType=BIGINT}, #{channel,jdbcType=VARCHAR},
+                #{come,jdbcType=VARCHAR}, #{newsource,jdbcType=VARCHAR}, #{source,jdbcType=VARCHAR},
+                #{master,jdbcType=BIGINT}, #{teacher,jdbcType=BIGINT}, #{sales,jdbcType=BIGINT},
+                #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{area,jdbcType=VARCHAR},
+                #{street,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{created,jdbcType=INTEGER},
+                #{updated,jdbcType=INTEGER}, #{bycreated,jdbcType=BIGINT}, #{byupdated,jdbcType=BIGINT},
+                #{payment,jdbcType=INTEGER}, #{flowstatus,jdbcType=INTEGER}, #{expNum,jdbcType=VARCHAR},
+                #{expstatus,jdbcType=INTEGER}, #{del,jdbcType=INTEGER}, #{againTime,jdbcType=INTEGER},
+                #{statusTags,jdbcType=VARCHAR}, #{lessonstatus,jdbcType=INTEGER}, #{lessonexstatus,jdbcType=INTEGER},
+                #{expTime,jdbcType=INTEGER}, #{fLessonTime,jdbcType=INTEGER}, #{fBuyTime,jdbcType=INTEGER},
+                #{life,jdbcType=INTEGER}, #{apk,jdbcType=INTEGER}, #{pc,jdbcType=INTEGER}, #{fpCount,jdbcType=TINYINT},
+                #{equ,jdbcType=VARCHAR}, #{lessonequ,jdbcType=VARCHAR}, #{fpTime,jdbcType=INTEGER},
+                #{fpTags,jdbcType=VARCHAR}, #{fpAuto,jdbcType=TINYINT}, #{fpProvince,jdbcType=VARCHAR},
+                #{fpCity,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}, #{buyid,jdbcType=BIGINT},
+                #{buyregtype,jdbcType=INTEGER}, #{buystatus,jdbcType=INTEGER}, #{point,jdbcType=TINYINT},
+                #{isactive,jdbcType=TINYINT}, #{havemind,jdbcType=TINYINT}, #{camera,jdbcType=VARCHAR},
+                #{serverinfo,jdbcType=VARCHAR}, #{bosswarning,jdbcType=TINYINT}, #{bosstime,jdbcType=INTEGER},
+                #{parent,jdbcType=BIGINT}, #{pcScript,jdbcType=TINYINT}, #{androidScript,jdbcType=TINYINT},
+                #{areacode,jdbcType=VARCHAR}, #{tmk,jdbcType=INTEGER}, #{tmkpool,jdbcType=INTEGER},
+                #{tmkstime,jdbcType=INTEGER}, #{tmkltime,jdbcType=INTEGER}, #{screenshot,jdbcType=BOOLEAN},
+                #{fpCcOrg,jdbcType=BOOLEAN}, #{noteReturnTime,jdbcType=INTEGER}, #{actStatus,jdbcType=INTEGER},
+                #{actType,jdbcType=INTEGER}, #{actPool,jdbcType=INTEGER}, #{editCcTime,jdbcType=INTEGER},
+                #{editTmkTime,jdbcType=INTEGER}, #{isNew,jdbcType=BOOLEAN}, #{openRec,jdbcType=INTEGER},
+                #{repool,jdbcType=BOOLEAN}, #{referee,jdbcType=INTEGER}, #{refereeMaster,jdbcType=INTEGER},
+                #{flowPlan,jdbcType=TINYINT}, #{reComm,jdbcType=BOOLEAN}, #{reTime,jdbcType=INTEGER},
+                #{callstatus,jdbcType=BOOLEAN}, #{calltime,jdbcType=INTEGER}, #{lockoperator,jdbcType=INTEGER},
+                #{masterFptime,jdbcType=INTEGER}, #{channelLevel,jdbcType=VARCHAR}, #{buylesstatus,jdbcType=BOOLEAN},
+                #{groupqrcode,jdbcType=VARCHAR}, #{flowtotal,jdbcType=INTEGER}, #{groupqrcodeUptime,jdbcType=INTEGER},
+                #{groupqrcodeUpuser,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.ning.learn.moon.userinfo.model.UUserinfo" useGeneratedKeys="true">
+        insert into u_userinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="smallname != null">
+                smallname,
+            </if>
+            <if test="head != null">
+                head,
+            </if>
+            <if test="pinyin != null">
+                pinyin,
+            </if>
+            <if test="password != null">
+                `password`,
+            </if>
+            <if test="number != null">
+                `number`,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+            <if test="mobileLocal != null">
+                mobile_local,
+            </if>
+            <if test="weixin != null">
+                weixin,
+            </if>
+            <if test="s0 != null">
+                s0,
+            </if>
+            <if test="s1 != null">
+                s1,
+            </if>
+            <if test="s2 != null">
+                s2,
+            </if>
+            <if test="s3 != null">
+                s3,
+            </if>
+            <if test="s4 != null">
+                s4,
+            </if>
+            <if test="s5 != null">
+                s5,
+            </if>
+            <if test="s6 != null">
+                s6,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="substatus != null">
+                substatus,
+            </if>
+            <if test="orther != null">
+                orther,
+            </if>
+            <if test="note != null">
+                note,
+            </if>
+            <if test="noteTime != null">
+                note_time,
+            </if>
+            <if test="ctime != null">
+                ctime,
+            </if>
+            <if test="utime != null">
+                utime,
+            </if>
+            <if test="cid != null">
+                cid,
+            </if>
+            <if test="mid != null">
+                mid,
+            </if>
+            <if test="channel != null">
+                channel,
+            </if>
+            <if test="come != null">
+                come,
+            </if>
+            <if test="newsource != null">
+                newsource,
+            </if>
+            <if test="source != null">
+                `source`,
+            </if>
+            <if test="master != null">
+                master,
+            </if>
+            <if test="teacher != null">
+                teacher,
+            </if>
+            <if test="sales != null">
+                sales,
+            </if>
+            <if test="province != null">
+                province,
+            </if>
+            <if test="city != null">
+                city,
+            </if>
+            <if test="area != null">
+                area,
+            </if>
+            <if test="street != null">
+                street,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="created != null">
+                created,
+            </if>
+            <if test="updated != null">
+                updated,
+            </if>
+            <if test="bycreated != null">
+                bycreated,
+            </if>
+            <if test="byupdated != null">
+                byupdated,
+            </if>
+            <if test="payment != null">
+                payment,
+            </if>
+            <if test="flowstatus != null">
+                flowstatus,
+            </if>
+            <if test="expNum != null">
+                exp_num,
+            </if>
+            <if test="expstatus != null">
+                expstatus,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="againTime != null">
+                again_time,
+            </if>
+            <if test="statusTags != null">
+                status_tags,
+            </if>
+            <if test="lessonstatus != null">
+                lessonstatus,
+            </if>
+            <if test="lessonexstatus != null">
+                lessonexstatus,
+            </if>
+            <if test="expTime != null">
+                exp_time,
+            </if>
+            <if test="fLessonTime != null">
+                f_lesson_time,
+            </if>
+            <if test="fBuyTime != null">
+                f_buy_time,
+            </if>
+            <if test="life != null">
+                life,
+            </if>
+            <if test="apk != null">
+                apk,
+            </if>
+            <if test="pc != null">
+                pc,
+            </if>
+            <if test="fpCount != null">
+                fp_count,
+            </if>
+            <if test="equ != null">
+                equ,
+            </if>
+            <if test="lessonequ != null">
+                lessonequ,
+            </if>
+            <if test="fpTime != null">
+                fp_time,
+            </if>
+            <if test="fpTags != null">
+                fp_tags,
+            </if>
+            <if test="fpAuto != null">
+                fp_auto,
+            </if>
+            <if test="fpProvince != null">
+                fp_province,
+            </if>
+            <if test="fpCity != null">
+                fp_city,
+            </if>
+            <if test="region != null">
+                region,
+            </if>
+            <if test="buyid != null">
+                buyid,
+            </if>
+            <if test="buyregtype != null">
+                buyregtype,
+            </if>
+            <if test="buystatus != null">
+                buystatus,
+            </if>
+            <if test="point != null">
+                point,
+            </if>
+            <if test="isactive != null">
+                isactive,
+            </if>
+            <if test="havemind != null">
+                havemind,
+            </if>
+            <if test="camera != null">
+                camera,
+            </if>
+            <if test="serverinfo != null">
+                serverinfo,
+            </if>
+            <if test="bosswarning != null">
+                bosswarning,
+            </if>
+            <if test="bosstime != null">
+                bosstime,
+            </if>
+            <if test="parent != null">
+                parent,
+            </if>
+            <if test="pcScript != null">
+                pc_script,
+            </if>
+            <if test="androidScript != null">
+                android_script,
+            </if>
+            <if test="areacode != null">
+                areacode,
+            </if>
+            <if test="tmk != null">
+                tmk,
+            </if>
+            <if test="tmkpool != null">
+                tmkpool,
+            </if>
+            <if test="tmkstime != null">
+                tmkstime,
+            </if>
+            <if test="tmkltime != null">
+                tmkltime,
+            </if>
+            <if test="screenshot != null">
+                screenshot,
+            </if>
+            <if test="fpCcOrg != null">
+                fp_cc_org,
+            </if>
+            <if test="noteReturnTime != null">
+                note_return_time,
+            </if>
+            <if test="actStatus != null">
+                act_status,
+            </if>
+            <if test="actType != null">
+                act_type,
+            </if>
+            <if test="actPool != null">
+                act_pool,
+            </if>
+            <if test="editCcTime != null">
+                edit_cc_time,
+            </if>
+            <if test="editTmkTime != null">
+                edit_tmk_time,
+            </if>
+            <if test="isNew != null">
+                is_new,
+            </if>
+            <if test="openRec != null">
+                open_rec,
+            </if>
+            <if test="repool != null">
+                repool,
+            </if>
+            <if test="referee != null">
+                referee,
+            </if>
+            <if test="refereeMaster != null">
+                referee_master,
+            </if>
+            <if test="flowPlan != null">
+                flow_plan,
+            </if>
+            <if test="reComm != null">
+                re_comm,
+            </if>
+            <if test="reTime != null">
+                re_time,
+            </if>
+            <if test="callstatus != null">
+                callstatus,
+            </if>
+            <if test="calltime != null">
+                calltime,
+            </if>
+            <if test="lockoperator != null">
+                lockoperator,
+            </if>
+            <if test="masterFptime != null">
+                master_fptime,
+            </if>
+            <if test="channelLevel != null">
+                channel_level,
+            </if>
+            <if test="buylesstatus != null">
+                buylesstatus,
+            </if>
+            <if test="groupqrcode != null">
+                groupqrcode,
+            </if>
+            <if test="flowtotal != null">
+                flowtotal,
+            </if>
+            <if test="groupqrcodeUptime != null">
+                groupqrcode_uptime,
+            </if>
+            <if test="groupqrcodeUpuser != null">
+                groupqrcode_upuser,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="smallname != null">
+                #{smallname,jdbcType=VARCHAR},
+            </if>
+            <if test="head != null">
+                #{head,jdbcType=VARCHAR},
+            </if>
+            <if test="pinyin != null">
+                #{pinyin,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="number != null">
+                #{number,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="mobileLocal != null">
+                #{mobileLocal,jdbcType=VARCHAR},
+            </if>
+            <if test="weixin != null">
+                #{weixin,jdbcType=VARCHAR},
+            </if>
+            <if test="s0 != null">
+                #{s0,jdbcType=INTEGER},
+            </if>
+            <if test="s1 != null">
+                #{s1,jdbcType=INTEGER},
+            </if>
+            <if test="s2 != null">
+                #{s2,jdbcType=INTEGER},
+            </if>
+            <if test="s3 != null">
+                #{s3,jdbcType=INTEGER},
+            </if>
+            <if test="s4 != null">
+                #{s4,jdbcType=INTEGER},
+            </if>
+            <if test="s5 != null">
+                #{s5,jdbcType=INTEGER},
+            </if>
+            <if test="s6 != null">
+                #{s6,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="substatus != null">
+                #{substatus,jdbcType=INTEGER},
+            </if>
+            <if test="orther != null">
+                #{orther,jdbcType=VARCHAR},
+            </if>
+            <if test="note != null">
+                #{note,jdbcType=VARCHAR},
+            </if>
+            <if test="noteTime != null">
+                #{noteTime,jdbcType=INTEGER},
+            </if>
+            <if test="ctime != null">
+                #{ctime,jdbcType=INTEGER},
+            </if>
+            <if test="utime != null">
+                #{utime,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                #{cid,jdbcType=BIGINT},
+            </if>
+            <if test="mid != null">
+                #{mid,jdbcType=BIGINT},
+            </if>
+            <if test="channel != null">
+                #{channel,jdbcType=VARCHAR},
+            </if>
+            <if test="come != null">
+                #{come,jdbcType=VARCHAR},
+            </if>
+            <if test="newsource != null">
+                #{newsource,jdbcType=VARCHAR},
+            </if>
+            <if test="source != null">
+                #{source,jdbcType=VARCHAR},
+            </if>
+            <if test="master != null">
+                #{master,jdbcType=BIGINT},
+            </if>
+            <if test="teacher != null">
+                #{teacher,jdbcType=BIGINT},
+            </if>
+            <if test="sales != null">
+                #{sales,jdbcType=BIGINT},
+            </if>
+            <if test="province != null">
+                #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="area != null">
+                #{area,jdbcType=VARCHAR},
+            </if>
+            <if test="street != null">
+                #{street,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="created != null">
+                #{created,jdbcType=INTEGER},
+            </if>
+            <if test="updated != null">
+                #{updated,jdbcType=INTEGER},
+            </if>
+            <if test="bycreated != null">
+                #{bycreated,jdbcType=BIGINT},
+            </if>
+            <if test="byupdated != null">
+                #{byupdated,jdbcType=BIGINT},
+            </if>
+            <if test="payment != null">
+                #{payment,jdbcType=INTEGER},
+            </if>
+            <if test="flowstatus != null">
+                #{flowstatus,jdbcType=INTEGER},
+            </if>
+            <if test="expNum != null">
+                #{expNum,jdbcType=VARCHAR},
+            </if>
+            <if test="expstatus != null">
+                #{expstatus,jdbcType=INTEGER},
+            </if>
+            <if test="del != null">
+                #{del,jdbcType=INTEGER},
+            </if>
+            <if test="againTime != null">
+                #{againTime,jdbcType=INTEGER},
+            </if>
+            <if test="statusTags != null">
+                #{statusTags,jdbcType=VARCHAR},
+            </if>
+            <if test="lessonstatus != null">
+                #{lessonstatus,jdbcType=INTEGER},
+            </if>
+            <if test="lessonexstatus != null">
+                #{lessonexstatus,jdbcType=INTEGER},
+            </if>
+            <if test="expTime != null">
+                #{expTime,jdbcType=INTEGER},
+            </if>
+            <if test="fLessonTime != null">
+                #{fLessonTime,jdbcType=INTEGER},
+            </if>
+            <if test="fBuyTime != null">
+                #{fBuyTime,jdbcType=INTEGER},
+            </if>
+            <if test="life != null">
+                #{life,jdbcType=INTEGER},
+            </if>
+            <if test="apk != null">
+                #{apk,jdbcType=INTEGER},
+            </if>
+            <if test="pc != null">
+                #{pc,jdbcType=INTEGER},
+            </if>
+            <if test="fpCount != null">
+                #{fpCount,jdbcType=TINYINT},
+            </if>
+            <if test="equ != null">
+                #{equ,jdbcType=VARCHAR},
+            </if>
+            <if test="lessonequ != null">
+                #{lessonequ,jdbcType=VARCHAR},
+            </if>
+            <if test="fpTime != null">
+                #{fpTime,jdbcType=INTEGER},
+            </if>
+            <if test="fpTags != null">
+                #{fpTags,jdbcType=VARCHAR},
+            </if>
+            <if test="fpAuto != null">
+                #{fpAuto,jdbcType=TINYINT},
+            </if>
+            <if test="fpProvince != null">
+                #{fpProvince,jdbcType=VARCHAR},
+            </if>
+            <if test="fpCity != null">
+                #{fpCity,jdbcType=VARCHAR},
+            </if>
+            <if test="region != null">
+                #{region,jdbcType=VARCHAR},
+            </if>
+            <if test="buyid != null">
+                #{buyid,jdbcType=BIGINT},
+            </if>
+            <if test="buyregtype != null">
+                #{buyregtype,jdbcType=INTEGER},
+            </if>
+            <if test="buystatus != null">
+                #{buystatus,jdbcType=INTEGER},
+            </if>
+            <if test="point != null">
+                #{point,jdbcType=TINYINT},
+            </if>
+            <if test="isactive != null">
+                #{isactive,jdbcType=TINYINT},
+            </if>
+            <if test="havemind != null">
+                #{havemind,jdbcType=TINYINT},
+            </if>
+            <if test="camera != null">
+                #{camera,jdbcType=VARCHAR},
+            </if>
+            <if test="serverinfo != null">
+                #{serverinfo,jdbcType=VARCHAR},
+            </if>
+            <if test="bosswarning != null">
+                #{bosswarning,jdbcType=TINYINT},
+            </if>
+            <if test="bosstime != null">
+                #{bosstime,jdbcType=INTEGER},
+            </if>
+            <if test="parent != null">
+                #{parent,jdbcType=BIGINT},
+            </if>
+            <if test="pcScript != null">
+                #{pcScript,jdbcType=TINYINT},
+            </if>
+            <if test="androidScript != null">
+                #{androidScript,jdbcType=TINYINT},
+            </if>
+            <if test="areacode != null">
+                #{areacode,jdbcType=VARCHAR},
+            </if>
+            <if test="tmk != null">
+                #{tmk,jdbcType=INTEGER},
+            </if>
+            <if test="tmkpool != null">
+                #{tmkpool,jdbcType=INTEGER},
+            </if>
+            <if test="tmkstime != null">
+                #{tmkstime,jdbcType=INTEGER},
+            </if>
+            <if test="tmkltime != null">
+                #{tmkltime,jdbcType=INTEGER},
+            </if>
+            <if test="screenshot != null">
+                #{screenshot,jdbcType=BOOLEAN},
+            </if>
+            <if test="fpCcOrg != null">
+                #{fpCcOrg,jdbcType=BOOLEAN},
+            </if>
+            <if test="noteReturnTime != null">
+                #{noteReturnTime,jdbcType=INTEGER},
+            </if>
+            <if test="actStatus != null">
+                #{actStatus,jdbcType=INTEGER},
+            </if>
+            <if test="actType != null">
+                #{actType,jdbcType=INTEGER},
+            </if>
+            <if test="actPool != null">
+                #{actPool,jdbcType=INTEGER},
+            </if>
+            <if test="editCcTime != null">
+                #{editCcTime,jdbcType=INTEGER},
+            </if>
+            <if test="editTmkTime != null">
+                #{editTmkTime,jdbcType=INTEGER},
+            </if>
+            <if test="isNew != null">
+                #{isNew,jdbcType=BOOLEAN},
+            </if>
+            <if test="openRec != null">
+                #{openRec,jdbcType=INTEGER},
+            </if>
+            <if test="repool != null">
+                #{repool,jdbcType=BOOLEAN},
+            </if>
+            <if test="referee != null">
+                #{referee,jdbcType=INTEGER},
+            </if>
+            <if test="refereeMaster != null">
+                #{refereeMaster,jdbcType=INTEGER},
+            </if>
+            <if test="flowPlan != null">
+                #{flowPlan,jdbcType=TINYINT},
+            </if>
+            <if test="reComm != null">
+                #{reComm,jdbcType=BOOLEAN},
+            </if>
+            <if test="reTime != null">
+                #{reTime,jdbcType=INTEGER},
+            </if>
+            <if test="callstatus != null">
+                #{callstatus,jdbcType=BOOLEAN},
+            </if>
+            <if test="calltime != null">
+                #{calltime,jdbcType=INTEGER},
+            </if>
+            <if test="lockoperator != null">
+                #{lockoperator,jdbcType=INTEGER},
+            </if>
+            <if test="masterFptime != null">
+                #{masterFptime,jdbcType=INTEGER},
+            </if>
+            <if test="channelLevel != null">
+                #{channelLevel,jdbcType=VARCHAR},
+            </if>
+            <if test="buylesstatus != null">
+                #{buylesstatus,jdbcType=BOOLEAN},
+            </if>
+            <if test="groupqrcode != null">
+                #{groupqrcode,jdbcType=VARCHAR},
+            </if>
+            <if test="flowtotal != null">
+                #{flowtotal,jdbcType=INTEGER},
+            </if>
+            <if test="groupqrcodeUptime != null">
+                #{groupqrcodeUptime,jdbcType=INTEGER},
+            </if>
+            <if test="groupqrcodeUpuser != null">
+                #{groupqrcodeUpuser,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ning.learn.moon.userinfo.model.UUserinfo">
+        update u_userinfo
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="smallname != null">
+                smallname = #{smallname,jdbcType=VARCHAR},
+            </if>
+            <if test="head != null">
+                head = #{head,jdbcType=VARCHAR},
+            </if>
+            <if test="pinyin != null">
+                pinyin = #{pinyin,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                `password` = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="number != null">
+                `number` = #{number,jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile,jdbcType=VARCHAR},
+            </if>
+            <if test="mobileLocal != null">
+                mobile_local = #{mobileLocal,jdbcType=VARCHAR},
+            </if>
+            <if test="weixin != null">
+                weixin = #{weixin,jdbcType=VARCHAR},
+            </if>
+            <if test="s0 != null">
+                s0 = #{s0,jdbcType=INTEGER},
+            </if>
+            <if test="s1 != null">
+                s1 = #{s1,jdbcType=INTEGER},
+            </if>
+            <if test="s2 != null">
+                s2 = #{s2,jdbcType=INTEGER},
+            </if>
+            <if test="s3 != null">
+                s3 = #{s3,jdbcType=INTEGER},
+            </if>
+            <if test="s4 != null">
+                s4 = #{s4,jdbcType=INTEGER},
+            </if>
+            <if test="s5 != null">
+                s5 = #{s5,jdbcType=INTEGER},
+            </if>
+            <if test="s6 != null">
+                s6 = #{s6,jdbcType=INTEGER},
+            </if>
+            <if test="type != null">
+                `type` = #{type,jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                `status` = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="substatus != null">
+                substatus = #{substatus,jdbcType=INTEGER},
+            </if>
+            <if test="orther != null">
+                orther = #{orther,jdbcType=VARCHAR},
+            </if>
+            <if test="note != null">
+                note = #{note,jdbcType=VARCHAR},
+            </if>
+            <if test="noteTime != null">
+                note_time = #{noteTime,jdbcType=INTEGER},
+            </if>
+            <if test="ctime != null">
+                ctime = #{ctime,jdbcType=INTEGER},
+            </if>
+            <if test="utime != null">
+                utime = #{utime,jdbcType=INTEGER},
+            </if>
+            <if test="cid != null">
+                cid = #{cid,jdbcType=BIGINT},
+            </if>
+            <if test="mid != null">
+                mid = #{mid,jdbcType=BIGINT},
+            </if>
+            <if test="channel != null">
+                channel = #{channel,jdbcType=VARCHAR},
+            </if>
+            <if test="come != null">
+                come = #{come,jdbcType=VARCHAR},
+            </if>
+            <if test="newsource != null">
+                newsource = #{newsource,jdbcType=VARCHAR},
+            </if>
+            <if test="source != null">
+                `source` = #{source,jdbcType=VARCHAR},
+            </if>
+            <if test="master != null">
+                master = #{master,jdbcType=BIGINT},
+            </if>
+            <if test="teacher != null">
+                teacher = #{teacher,jdbcType=BIGINT},
+            </if>
+            <if test="sales != null">
+                sales = #{sales,jdbcType=BIGINT},
+            </if>
+            <if test="province != null">
+                province = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="area != null">
+                area = #{area,jdbcType=VARCHAR},
+            </if>
+            <if test="street != null">
+                street = #{street,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="created != null">
+                created = #{created,jdbcType=INTEGER},
+            </if>
+            <if test="updated != null">
+                updated = #{updated,jdbcType=INTEGER},
+            </if>
+            <if test="bycreated != null">
+                bycreated = #{bycreated,jdbcType=BIGINT},
+            </if>
+            <if test="byupdated != null">
+                byupdated = #{byupdated,jdbcType=BIGINT},
+            </if>
+            <if test="payment != null">
+                payment = #{payment,jdbcType=INTEGER},
+            </if>
+            <if test="flowstatus != null">
+                flowstatus = #{flowstatus,jdbcType=INTEGER},
+            </if>
+            <if test="expNum != null">
+                exp_num = #{expNum,jdbcType=VARCHAR},
+            </if>
+            <if test="expstatus != null">
+                expstatus = #{expstatus,jdbcType=INTEGER},
+            </if>
+            <if test="del != null">
+                del = #{del,jdbcType=INTEGER},
+            </if>
+            <if test="againTime != null">
+                again_time = #{againTime,jdbcType=INTEGER},
+            </if>
+            <if test="statusTags != null">
+                status_tags = #{statusTags,jdbcType=VARCHAR},
+            </if>
+            <if test="lessonstatus != null">
+                lessonstatus = #{lessonstatus,jdbcType=INTEGER},
+            </if>
+            <if test="lessonexstatus != null">
+                lessonexstatus = #{lessonexstatus,jdbcType=INTEGER},
+            </if>
+            <if test="expTime != null">
+                exp_time = #{expTime,jdbcType=INTEGER},
+            </if>
+            <if test="fLessonTime != null">
+                f_lesson_time = #{fLessonTime,jdbcType=INTEGER},
+            </if>
+            <if test="fBuyTime != null">
+                f_buy_time = #{fBuyTime,jdbcType=INTEGER},
+            </if>
+            <if test="life != null">
+                life = #{life,jdbcType=INTEGER},
+            </if>
+            <if test="apk != null">
+                apk = #{apk,jdbcType=INTEGER},
+            </if>
+            <if test="pc != null">
+                pc = #{pc,jdbcType=INTEGER},
+            </if>
+            <if test="fpCount != null">
+                fp_count = #{fpCount,jdbcType=TINYINT},
+            </if>
+            <if test="equ != null">
+                equ = #{equ,jdbcType=VARCHAR},
+            </if>
+            <if test="lessonequ != null">
+                lessonequ = #{lessonequ,jdbcType=VARCHAR},
+            </if>
+            <if test="fpTime != null">
+                fp_time = #{fpTime,jdbcType=INTEGER},
+            </if>
+            <if test="fpTags != null">
+                fp_tags = #{fpTags,jdbcType=VARCHAR},
+            </if>
+            <if test="fpAuto != null">
+                fp_auto = #{fpAuto,jdbcType=TINYINT},
+            </if>
+            <if test="fpProvince != null">
+                fp_province = #{fpProvince,jdbcType=VARCHAR},
+            </if>
+            <if test="fpCity != null">
+                fp_city = #{fpCity,jdbcType=VARCHAR},
+            </if>
+            <if test="region != null">
+                region = #{region,jdbcType=VARCHAR},
+            </if>
+            <if test="buyid != null">
+                buyid = #{buyid,jdbcType=BIGINT},
+            </if>
+            <if test="buyregtype != null">
+                buyregtype = #{buyregtype,jdbcType=INTEGER},
+            </if>
+            <if test="buystatus != null">
+                buystatus = #{buystatus,jdbcType=INTEGER},
+            </if>
+            <if test="point != null">
+                point = #{point,jdbcType=TINYINT},
+            </if>
+            <if test="isactive != null">
+                isactive = #{isactive,jdbcType=TINYINT},
+            </if>
+            <if test="havemind != null">
+                havemind = #{havemind,jdbcType=TINYINT},
+            </if>
+            <if test="camera != null">
+                camera = #{camera,jdbcType=VARCHAR},
+            </if>
+            <if test="serverinfo != null">
+                serverinfo = #{serverinfo,jdbcType=VARCHAR},
+            </if>
+            <if test="bosswarning != null">
+                bosswarning = #{bosswarning,jdbcType=TINYINT},
+            </if>
+            <if test="bosstime != null">
+                bosstime = #{bosstime,jdbcType=INTEGER},
+            </if>
+            <if test="parent != null">
+                parent = #{parent,jdbcType=BIGINT},
+            </if>
+            <if test="pcScript != null">
+                pc_script = #{pcScript,jdbcType=TINYINT},
+            </if>
+            <if test="androidScript != null">
+                android_script = #{androidScript,jdbcType=TINYINT},
+            </if>
+            <if test="areacode != null">
+                areacode = #{areacode,jdbcType=VARCHAR},
+            </if>
+            <if test="tmk != null">
+                tmk = #{tmk,jdbcType=INTEGER},
+            </if>
+            <if test="tmkpool != null">
+                tmkpool = #{tmkpool,jdbcType=INTEGER},
+            </if>
+            <if test="tmkstime != null">
+                tmkstime = #{tmkstime,jdbcType=INTEGER},
+            </if>
+            <if test="tmkltime != null">
+                tmkltime = #{tmkltime,jdbcType=INTEGER},
+            </if>
+            <if test="screenshot != null">
+                screenshot = #{screenshot,jdbcType=BOOLEAN},
+            </if>
+            <if test="fpCcOrg != null">
+                fp_cc_org = #{fpCcOrg,jdbcType=BOOLEAN},
+            </if>
+            <if test="noteReturnTime != null">
+                note_return_time = #{noteReturnTime,jdbcType=INTEGER},
+            </if>
+            <if test="actStatus != null">
+                act_status = #{actStatus,jdbcType=INTEGER},
+            </if>
+            <if test="actType != null">
+                act_type = #{actType,jdbcType=INTEGER},
+            </if>
+            <if test="actPool != null">
+                act_pool = #{actPool,jdbcType=INTEGER},
+            </if>
+            <if test="editCcTime != null">
+                edit_cc_time = #{editCcTime,jdbcType=INTEGER},
+            </if>
+            <if test="editTmkTime != null">
+                edit_tmk_time = #{editTmkTime,jdbcType=INTEGER},
+            </if>
+            <if test="isNew != null">
+                is_new = #{isNew,jdbcType=BOOLEAN},
+            </if>
+            <if test="openRec != null">
+                open_rec = #{openRec,jdbcType=INTEGER},
+            </if>
+            <if test="repool != null">
+                repool = #{repool,jdbcType=BOOLEAN},
+            </if>
+            <if test="referee != null">
+                referee = #{referee,jdbcType=INTEGER},
+            </if>
+            <if test="refereeMaster != null">
+                referee_master = #{refereeMaster,jdbcType=INTEGER},
+            </if>
+            <if test="flowPlan != null">
+                flow_plan = #{flowPlan,jdbcType=TINYINT},
+            </if>
+            <if test="reComm != null">
+                re_comm = #{reComm,jdbcType=BOOLEAN},
+            </if>
+            <if test="reTime != null">
+                re_time = #{reTime,jdbcType=INTEGER},
+            </if>
+            <if test="callstatus != null">
+                callstatus = #{callstatus,jdbcType=BOOLEAN},
+            </if>
+            <if test="calltime != null">
+                calltime = #{calltime,jdbcType=INTEGER},
+            </if>
+            <if test="lockoperator != null">
+                lockoperator = #{lockoperator,jdbcType=INTEGER},
+            </if>
+            <if test="masterFptime != null">
+                master_fptime = #{masterFptime,jdbcType=INTEGER},
+            </if>
+            <if test="channelLevel != null">
+                channel_level = #{channelLevel,jdbcType=VARCHAR},
+            </if>
+            <if test="buylesstatus != null">
+                buylesstatus = #{buylesstatus,jdbcType=BOOLEAN},
+            </if>
+            <if test="groupqrcode != null">
+                groupqrcode = #{groupqrcode,jdbcType=VARCHAR},
+            </if>
+            <if test="flowtotal != null">
+                flowtotal = #{flowtotal,jdbcType=INTEGER},
+            </if>
+            <if test="groupqrcodeUptime != null">
+                groupqrcode_uptime = #{groupqrcodeUptime,jdbcType=INTEGER},
+            </if>
+            <if test="groupqrcodeUpuser != null">
+                groupqrcode_upuser = #{groupqrcodeUpuser,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ning.learn.moon.userinfo.model.UUserinfo">
+        update u_userinfo
+        set username           = #{username,jdbcType=VARCHAR},
+            smallname          = #{smallname,jdbcType=VARCHAR},
+            head               = #{head,jdbcType=VARCHAR},
+            pinyin             = #{pinyin,jdbcType=VARCHAR},
+            `password`         = #{password,jdbcType=VARCHAR},
+            `number`           = #{number,jdbcType=VARCHAR},
+            mobile             = #{mobile,jdbcType=VARCHAR},
+            mobile_local       = #{mobileLocal,jdbcType=VARCHAR},
+            weixin             = #{weixin,jdbcType=VARCHAR},
+            s0                 = #{s0,jdbcType=INTEGER},
+            s1                 = #{s1,jdbcType=INTEGER},
+            s2                 = #{s2,jdbcType=INTEGER},
+            s3                 = #{s3,jdbcType=INTEGER},
+            s4                 = #{s4,jdbcType=INTEGER},
+            s5                 = #{s5,jdbcType=INTEGER},
+            s6                 = #{s6,jdbcType=INTEGER},
+            `type`             = #{type,jdbcType=INTEGER},
+            `status`           = #{status,jdbcType=INTEGER},
+            substatus          = #{substatus,jdbcType=INTEGER},
+            orther             = #{orther,jdbcType=VARCHAR},
+            note               = #{note,jdbcType=VARCHAR},
+            note_time          = #{noteTime,jdbcType=INTEGER},
+            ctime              = #{ctime,jdbcType=INTEGER},
+            utime              = #{utime,jdbcType=INTEGER},
+            cid                = #{cid,jdbcType=BIGINT},
+            mid                = #{mid,jdbcType=BIGINT},
+            channel            = #{channel,jdbcType=VARCHAR},
+            come               = #{come,jdbcType=VARCHAR},
+            newsource          = #{newsource,jdbcType=VARCHAR},
+            `source`           = #{source,jdbcType=VARCHAR},
+            master             = #{master,jdbcType=BIGINT},
+            teacher            = #{teacher,jdbcType=BIGINT},
+            sales              = #{sales,jdbcType=BIGINT},
+            province           = #{province,jdbcType=VARCHAR},
+            city               = #{city,jdbcType=VARCHAR},
+            area               = #{area,jdbcType=VARCHAR},
+            street             = #{street,jdbcType=VARCHAR},
+            address            = #{address,jdbcType=VARCHAR},
+            created            = #{created,jdbcType=INTEGER},
+            updated            = #{updated,jdbcType=INTEGER},
+            bycreated          = #{bycreated,jdbcType=BIGINT},
+            byupdated          = #{byupdated,jdbcType=BIGINT},
+            payment            = #{payment,jdbcType=INTEGER},
+            flowstatus         = #{flowstatus,jdbcType=INTEGER},
+            exp_num            = #{expNum,jdbcType=VARCHAR},
+            expstatus          = #{expstatus,jdbcType=INTEGER},
+            del                = #{del,jdbcType=INTEGER},
+            again_time         = #{againTime,jdbcType=INTEGER},
+            status_tags        = #{statusTags,jdbcType=VARCHAR},
+            lessonstatus       = #{lessonstatus,jdbcType=INTEGER},
+            lessonexstatus     = #{lessonexstatus,jdbcType=INTEGER},
+            exp_time           = #{expTime,jdbcType=INTEGER},
+            f_lesson_time      = #{fLessonTime,jdbcType=INTEGER},
+            f_buy_time         = #{fBuyTime,jdbcType=INTEGER},
+            life               = #{life,jdbcType=INTEGER},
+            apk                = #{apk,jdbcType=INTEGER},
+            pc                 = #{pc,jdbcType=INTEGER},
+            fp_count           = #{fpCount,jdbcType=TINYINT},
+            equ                = #{equ,jdbcType=VARCHAR},
+            lessonequ          = #{lessonequ,jdbcType=VARCHAR},
+            fp_time            = #{fpTime,jdbcType=INTEGER},
+            fp_tags            = #{fpTags,jdbcType=VARCHAR},
+            fp_auto            = #{fpAuto,jdbcType=TINYINT},
+            fp_province        = #{fpProvince,jdbcType=VARCHAR},
+            fp_city            = #{fpCity,jdbcType=VARCHAR},
+            region             = #{region,jdbcType=VARCHAR},
+            buyid              = #{buyid,jdbcType=BIGINT},
+            buyregtype         = #{buyregtype,jdbcType=INTEGER},
+            buystatus          = #{buystatus,jdbcType=INTEGER},
+            point              = #{point,jdbcType=TINYINT},
+            isactive           = #{isactive,jdbcType=TINYINT},
+            havemind           = #{havemind,jdbcType=TINYINT},
+            camera             = #{camera,jdbcType=VARCHAR},
+            serverinfo         = #{serverinfo,jdbcType=VARCHAR},
+            bosswarning        = #{bosswarning,jdbcType=TINYINT},
+            bosstime           = #{bosstime,jdbcType=INTEGER},
+            parent             = #{parent,jdbcType=BIGINT},
+            pc_script          = #{pcScript,jdbcType=TINYINT},
+            android_script     = #{androidScript,jdbcType=TINYINT},
+            areacode           = #{areacode,jdbcType=VARCHAR},
+            tmk                = #{tmk,jdbcType=INTEGER},
+            tmkpool            = #{tmkpool,jdbcType=INTEGER},
+            tmkstime           = #{tmkstime,jdbcType=INTEGER},
+            tmkltime           = #{tmkltime,jdbcType=INTEGER},
+            screenshot         = #{screenshot,jdbcType=BOOLEAN},
+            fp_cc_org          = #{fpCcOrg,jdbcType=BOOLEAN},
+            note_return_time   = #{noteReturnTime,jdbcType=INTEGER},
+            act_status         = #{actStatus,jdbcType=INTEGER},
+            act_type           = #{actType,jdbcType=INTEGER},
+            act_pool           = #{actPool,jdbcType=INTEGER},
+            edit_cc_time       = #{editCcTime,jdbcType=INTEGER},
+            edit_tmk_time      = #{editTmkTime,jdbcType=INTEGER},
+            is_new             = #{isNew,jdbcType=BOOLEAN},
+            open_rec           = #{openRec,jdbcType=INTEGER},
+            repool             = #{repool,jdbcType=BOOLEAN},
+            referee            = #{referee,jdbcType=INTEGER},
+            referee_master     = #{refereeMaster,jdbcType=INTEGER},
+            flow_plan          = #{flowPlan,jdbcType=TINYINT},
+            re_comm            = #{reComm,jdbcType=BOOLEAN},
+            re_time            = #{reTime,jdbcType=INTEGER},
+            callstatus         = #{callstatus,jdbcType=BOOLEAN},
+            calltime           = #{calltime,jdbcType=INTEGER},
+            lockoperator       = #{lockoperator,jdbcType=INTEGER},
+            master_fptime      = #{masterFptime,jdbcType=INTEGER},
+            channel_level      = #{channelLevel,jdbcType=VARCHAR},
+            buylesstatus       = #{buylesstatus,jdbcType=BOOLEAN},
+            groupqrcode        = #{groupqrcode,jdbcType=VARCHAR},
+            flowtotal          = #{flowtotal,jdbcType=INTEGER},
+            groupqrcode_uptime = #{groupqrcodeUptime,jdbcType=INTEGER},
+            groupqrcode_upuser = #{groupqrcodeUpuser,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <!-- 获取学生班主任信息 -->
+    <select id="selectStudentMasterInfo" resultType="com.ning.learn.moon.userinfo.po.UserInfoPO">
+        SELECT id, username AS userNAME, master
+        FROM u_userinfo
+        WHERE id = #{uid,jdbcType=BIGINT}
+    </select>
+</mapper>

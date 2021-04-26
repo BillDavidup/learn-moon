@@ -32,3 +32,5 @@ target
 *.tmp
 Thumbs.db
 *.DS_Store
+# 屏蔽mybatis-generator插件生成的默认项目下的src文件
+/src
