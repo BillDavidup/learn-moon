@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Hello world!
+ * Spring boot 启动类
  *
  */
 @MapperScan(basePackages = {"com.ning.learn.moon.**.dao"})

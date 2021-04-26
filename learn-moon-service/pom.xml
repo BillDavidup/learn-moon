@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 指定父模块 -->
     <parent>
         <groupId>com.ning.learn.moon</groupId>
         <artifactId>learn-moon</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <description>业务逻辑服务模块</description>
     <groupId>com.ning.learn.moon</groupId>
     <artifactId>learn-moon-service</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>learn-moon-service</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,11 +25,12 @@
     </properties>
 
     <dependencies>
+        <!-- 内部通用模块依赖 -->
         <dependency>
             <groupId>com.ning.learn.moon</groupId>
             <artifactId>learn-moon-common</artifactId>
             <version>1.0-SNAPSHOT</version>
-
+        <!-- 内部dao层模块依赖 -->
         </dependency>
         <dependency>
             <groupId>com.ning.learn.moon</groupId>

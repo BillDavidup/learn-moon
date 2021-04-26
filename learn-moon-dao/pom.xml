@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- 指定父模块 -->
     <parent>
         <groupId>com.ning.learn.moon</groupId>
         <artifactId>learn-moon</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <description>mybatis 插件生产的dao接口类以及实体bean类模块</description>
     <groupId>com.ning.learn.moon</groupId>
     <artifactId>learn-moon-dao</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <name>learn-moon-dao</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

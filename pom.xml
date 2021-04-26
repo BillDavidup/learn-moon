@@ -15,27 +15,35 @@
     <!-- 父模块GAV信息 -->
     <description>所有子模块的父模块-依赖传递管理</description>
     <name>learn-moon</name>
-    <url>http://www.example.com</url>
+    <!-- 项目github ssh地址: -->
+    <url>https://github.com/BillDavidup/learn-moon.git</url>
 
     <groupId>com.ning.learn.moon</groupId>
     <artifactId>learn-moon</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!--  packaging 父级项目的类型是pom  -->
+    <!-- 父级项目的packaging类型必须是pom  -->
     <packaging>pom</packaging>
 
+    <!-- 子模块声明 -->
     <modules>
+        <!-- 通用模块 -->
         <module>learn-moon-common</module>
+        <!-- mybatis 插件生产的dao接口类以及实体bean类模块 -->
         <module>learn-moon-dao</module>
+        <!-- 业务逻辑服务模块 -->
         <module>learn-moon-service</module>
+        <!-- 对外开放的API接口网关模块 -->
         <module>learn-moon-web</module>
     </modules>
 
+    <!-- 属性统一配置 -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <!-- 依赖管理：当前项目中引入依赖，如果子模块继承了该项目，也会在子模块中引入依赖 -->
     <dependencies>
         <!-- 第三方依赖 -->
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
@@ -47,6 +55,10 @@
         </dependency>
     </dependencies>
 
+    <!-- 依赖管理器：DependencyManagement 只是声明依赖，并不实际引入，因此子项目需要显式声明需要用到的依赖
+    如果在子项目中声明依赖，是不会从父项目中继承下来的，只有在子项目中写了该依赖项，并且没有执行具体版本，才会从父项目中继承该项，并且version和scope都读取自父pom
+    如果子项目指定了版本号，那么会使用子项目中指定的jar版本
+     -->
     <dependencyManagement>
         <dependencies>
             <!-- druid连接池 -->
@@ -81,8 +93,10 @@
     </dependencyManagement>
 
     <build>
+        <!-- 插件管理器：子模块需要不带版本号的依赖声明才能使用 -->
         <pluginManagement>
             <plugins>
+                <!-- 打包插件 -->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
