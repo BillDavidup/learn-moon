@@ -109,6 +109,19 @@ public class ResultDTO<T> implements Serializable {
     }
 
     /**
+     * 构造请求失败时的返回对象
+     *
+     * @param msg 错误码信息
+     * @return 返回对象
+     */
+    public static ResultDTO failed(String msg) {
+        ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setCode(ResultEnum.FAIL.getCode());
+        resultDTO.setMsg(msg);
+        return resultDTO;
+    }
+
+    /**
      * 获取 返回码
      */
     public String getCode() {

@@ -1,18 +1,29 @@
 package com.ning.learn.moon.controller;
 
+import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
+import com.github.xiaoymin.knife4j.annotations.ApiSort;
+import com.ning.learn.moon.common.result.ResultDTO;
 import com.ning.learn.moon.userinfo.bo.UserInfoBO;
 import com.ning.learn.moon.userinfo.service.UserInfoService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Objects;
+
 /**
  * @Author: wudening
  * @Description: 用户信息Api控制器
  * @Date: 2021/4/26 5:40 下午
  */
+@Api(tags = "UserInfoController")
+@ApiSort(1) // Knife4j API文档 Controller排序
 @RestController
 @RequestMapping("/api")
 public class UserInfoController {
@@ -20,10 +31,28 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
+    @ApiOperationSupport(order = 1) // Knife4j API文档接口级别排序
+    @ApiOperation(value = "获取学生信息接口", nickname = "根据学生ID获取用学生相关信息") // Knife4j API文档接口信息
+    @ApiImplicitParam(name = "studentId", value = "学生ID", required = true, dataType = "int") // Knife4j API文档参数定义
     @GetMapping("/user/master/info")
     public Object getUserMasterInfo(@RequestParam("studentId") Long uid) {
         UserInfoBO userMasterInfo = userInfoService.getUserMasterInfo(uid);
         return userMasterInfo;
     }
 
+    @ApiOperationSupport(order = 2) // Knife4j API文档接口级别排序
+    @ApiOperation(value = "获取学生信息接口V2", nickname = "根据学生ID获取用学生相关信息V2") // Knife4j API文档接口信息
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "studentId", value = "学生ID", required = true, dataType = "int"),
+            @ApiImplicitParam(name = "master", value = "学生班主任ID", required = false, dataType = "int")
+    })
+    @GetMapping("/user/master/info/v2")
+    public ResultDTO<UserInfoBO> getUserMasterInfo2(@RequestParam("studentId") Long uid, @RequestParam(name = "master", required = false) Long master) {
+        UserInfoBO userMasterInfo = userInfoService.getUserMasterInfo(uid);
+        if (Objects.nonNull(master) && master.equals(123L)) {
+            return ResultDTO.success(userMasterInfo);
+        } else {
+            return ResultDTO.failed("班主任不能为空");
+        }
+    }
 }
