@@ -10,6 +10,7 @@ import java.util.List;
  * @Description: 统一封装结果包装类
  * @Date: 2021/4/26 8:34 下午
  */
+@Deprecated
 public class ResultDTO<T> implements Serializable {
 
     private static final long serialVersionUID = 4231444622421328612L;
