@@ -17,3 +17,8 @@ knife4j:
   setting:
     # 开启器分组，让@ApiSort(int序号)控制controller排序展示
     enableGroup: true
+# 【配置中心】NACOS
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
+    namespace: b236ec2d-c656-4d14-a567-7a17a80399d0

@@ -8,7 +8,9 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
+        <!-- 2.4.5 的版本与nacos的注册Eureka不兼容导致报错-->
+        <!-- 问题文档：https://blog.csdn.net/qq_34046046/article/details/109853508 -->
+        <version>2.3.3.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -75,6 +77,13 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>8.0.24</version>
             </dependency>
+            <!-- mybatis -->
+            <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.1.4</version>
+            </dependency>
             <!-- mybatis plus -->
             <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
             <dependency>
@@ -97,6 +106,12 @@
                 <artifactId>knife4j-spring-boot-starter</artifactId>
                 <version>3.0.2</version>
             </dependency>
+            <!-- 【配置中心】nacos -->
+            <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>0.2.7</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -108,7 +123,19 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>2.4.5</version>
+                    <version>2.3.3.RELEASE</version>
+                    <configuration>
+                        <!-- 指定该Main Class为全局的唯一入口 -->
+                        <mainClass>com.ning.learn.moon.LearnMoonWebApplication</mainClass>
+                        <layout>ZIP</layout>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中 -->
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>

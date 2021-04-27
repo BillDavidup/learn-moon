@@ -18,4 +18,6 @@ public class UserInfoBO {
     String userName;
     @ApiModelProperty(value = "学生班主任", name = "班主任")
     Long master;
+    @ApiModelProperty(value = "nacos统一配置中心读取的变量")
+    String appVersionConfig;
 }

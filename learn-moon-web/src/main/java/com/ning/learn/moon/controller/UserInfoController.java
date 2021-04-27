@@ -2,7 +2,7 @@ package com.ning.learn.moon.controller;
 
 import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import com.github.xiaoymin.knife4j.annotations.ApiSort;
-import com.ning.learn.moon.common.result.ResultDTO;
+import com.ning.learn.moon.common.result.Result;
 import com.ning.learn.moon.userinfo.bo.UserInfoBO;
 import com.ning.learn.moon.userinfo.service.UserInfoService;
 import io.swagger.annotations.Api;
@@ -35,9 +35,9 @@ public class UserInfoController {
     @ApiOperation(value = "获取学生信息接口", nickname = "根据学生ID获取用学生相关信息") // Knife4j API文档接口信息
     @ApiImplicitParam(name = "studentId", value = "学生ID", required = true, dataType = "int") // Knife4j API文档参数定义
     @GetMapping("/user/master/info")
-    public Object getUserMasterInfo(@RequestParam("studentId") Long uid) {
+    public Result<UserInfoBO> getUserMasterInfo(@RequestParam("studentId") Long uid) {
         UserInfoBO userMasterInfo = userInfoService.getUserMasterInfo(uid);
-        return userMasterInfo;
+        return Result.createOK(userMasterInfo, "接入配置中心nacos获取的版本号成功");
     }
 
     @ApiOperationSupport(order = 2) // Knife4j API文档接口级别排序
@@ -47,12 +47,12 @@ public class UserInfoController {
             @ApiImplicitParam(name = "master", value = "学生班主任ID", required = false, dataType = "int")
     })
     @GetMapping("/user/master/info/v2")
-    public ResultDTO<UserInfoBO> getUserMasterInfo2(@RequestParam("studentId") Long uid, @RequestParam(name = "master", required = false) Long master) {
+    public Result<UserInfoBO> getUserMasterInfo2(@RequestParam("studentId") Long uid, @RequestParam(name = "master", required = false) Long master) {
         UserInfoBO userMasterInfo = userInfoService.getUserMasterInfo(uid);
         if (Objects.nonNull(master) && master.equals(123L)) {
-            return ResultDTO.success(userMasterInfo);
+            return Result.createOK(userMasterInfo);
         } else {
-            return ResultDTO.failed("班主任不能为空");
+            return Result.createFail("班主任不能为空");
         }
     }
 }

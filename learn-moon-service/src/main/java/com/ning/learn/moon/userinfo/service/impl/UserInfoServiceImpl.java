@@ -1,5 +1,6 @@
 package com.ning.learn.moon.userinfo.service.impl;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.ning.learn.moon.userinfo.bo.UserInfoBO;
 import com.ning.learn.moon.userinfo.dao.UUserinfoDao;
 import com.ning.learn.moon.userinfo.po.UserInfoPO;
@@ -18,6 +19,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private UUserinfoDao uUserinfoDao;
 
+    @NacosValue(value = "${learn-moon.app.version:2.8.0}", autoRefreshed = true)
+    private String appVersion;
+
     @Override
     public UserInfoBO getUserMasterInfo(Long uid) {
         UserInfoPO userMasterInfo = uUserinfoDao.selectStudentMasterInfo(uid);
@@ -29,6 +33,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         userInfoBO.setId(id);
         userInfoBO.setUserName(userName);
         userInfoBO.setMaster(master);
+        userInfoBO.setAppVersionConfig(appVersion);
 
         return userInfoBO;
     }
