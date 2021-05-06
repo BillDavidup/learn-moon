@@ -22,3 +22,18 @@ nacos:
   config:
     server-addr: 127.0.0.1:8848
     namespace: b236ec2d-c656-4d14-a567-7a17a80399d0
+# 【非关系型数据库】Redis jedis wiki：https://github.com/redis/jedis/wiki
+redis:
+  hostname: 127.0.0.1
+  port: 6379
+  password:
+  # 最大链接时间
+  maxactive: 100
+  #最大空闲链接数
+  maxidleConnection: 100
+  #最小空闲链接数 初始化链接数
+  minidleConnection: 5
+  #空闲毫秒数进行链接回收 1min
+  minEvictableIdleTimeMillis: 60000
+  #等待链接的最长时间毫秒值
+  maxwaitMillis: 1000
