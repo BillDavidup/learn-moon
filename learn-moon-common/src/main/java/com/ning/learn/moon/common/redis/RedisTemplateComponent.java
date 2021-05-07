@@ -2,6 +2,7 @@ package com.ning.learn.moon.common.redis;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
@@ -23,36 +24,11 @@ public class RedisTemplateComponent {
     @Value("${redis.password}")
     private String redisPassword;
 
-    @Value("${redis.maxidleConnection:20}")
-    private Integer maxidleConnection;
-
-    @Value("${redis.minidleConnection:5}")
-    private Integer minidleConnection;
-
-    @Value("${redis.maxWaitMillis:1000}")
-    private Integer maxWaitMillis;
-
-    @Value("${redis.maxactive:100}")
-    private Integer maxactive;
-
-    @Value("${redis.minEvictableIdleTimeMillis:60000}")
-    private Integer minEvictableIdleTimeMillis;
-
     public RedisConnectionFactory getRedisConnectionFactory() {
 
-        JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-        jedisPoolConfig.setMaxIdle(maxidleConnection);
-        jedisPoolConfig.setMinIdle(minidleConnection);
-        jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
-        jedisPoolConfig.setMaxTotal(maxactive);
-        jedisPoolConfig.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);
-        //开启使用链接时进行扫描
-        jedisPoolConfig.setTestOnBorrow(true);
-
-        JedisConnectionFactory factory = new JedisConnectionFactory(jedisPoolConfig);
-        factory.setHostName(redisHost);
-        factory.setPort(redisPort);
-        factory.setPassword(redisPassword);
+        JedisConnectionFactory factory = new JedisConnectionFactory();
+        RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration(redisHost, redisPort);
+        redisStandaloneConfiguration.setPassword(redisPassword);
         return factory;
     }
 

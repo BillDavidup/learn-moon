@@ -27,13 +27,3 @@ redis:
   hostname: 127.0.0.1
   port: 6379
   password:
-  # 最大链接时间
-  maxactive: 100
-  #最大空闲链接数
-  maxidleConnection: 100
-  #最小空闲链接数 初始化链接数
-  minidleConnection: 5
-  #空闲毫秒数进行链接回收 1min
-  minEvictableIdleTimeMillis: 60000
-  #等待链接的最长时间毫秒值
-  maxwaitMillis: 1000

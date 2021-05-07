@@ -34,4 +34,5 @@ Thumbs.db
 *.DS_Store
 # 屏蔽mybatis-generator插件生成的默认项目下的src文件
 /src
-/logs
+# 屏蔽任何日志文件夹
+**/logs
