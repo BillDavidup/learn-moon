@@ -1,5 +1,5 @@
 # 终端Terminal登录本地数据库命令 -p后面的12345678是本地mysql的密码
-mysql -uroot -p123456
+# mysql -uroot -p123456
 # 本地登录后查看数据库
 show databases;
 # 本地创建数据库
