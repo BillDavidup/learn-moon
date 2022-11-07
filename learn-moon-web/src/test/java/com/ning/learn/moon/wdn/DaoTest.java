@@ -7,6 +7,7 @@ import com.ning.learn.moon.lesson.po.LessonInfoPO;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class DaoTest extends TestBase {
 
-    @Autowired
+    @Resource
     UserLessonAiDao userLessonAiDao;
 
     @Test
