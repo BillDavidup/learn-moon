@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <!-- 引用激活的配置文件变量 -->
+    <springProperty scope="context" name="env" source="spring.profiles.active"/>
+    <!-- 全局项目ID -->
+    <springProperty scope="context" name="appId" source="app.id"/>
     <!-- 输出到控制台 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <!--彩色日志配色：https://logback.qos.ch/manual/layouts.html#coloring-->
-            <pattern>%red(%date{yyyy-MM-dd HH:mm:ss}) %yellow([%X{traceId}]) %cyan([learn-moon]) %boldMagenta([%thread]) %highlight([%level]) - %boldGreen(%m%n)</pattern>
+            <pattern>%red(%date{yyyy-MM-dd HH:mm:ss}) %yellow([%X{traceId}]) %cyan([${appId}:${env}]) %boldMagenta([%thread]) %highlight([%level]) - %boldGreen(%m%n)</pattern>
         </encoder>
     </appender>
     <!-- error日志 -->
